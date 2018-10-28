@@ -5,7 +5,11 @@ import sys
 import tempfile
 
 import pytest
-from mock import NonCallableMock, call, patch
+
+try:
+    from unittest.mock import NonCallableMock, call, patch
+except ImportError:
+    from mock import NonCallableMock, call, patch
 
 import virtualenv
 
